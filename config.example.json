@@ -1,0 +1,31 @@
+{
+  "part_size_mb": 64,
+  "storages": [
+    {
+      "name": "zakroma_01",
+      "endpoint": "https://zakroma.example.com",
+      "bucket": "bucket_01",
+      "access_key": "REPLACE_OR_USE_ENV",
+      "secret_key": "REPLACE_OR_USE_ENV",
+      "path_style": true,
+      "insecure_skip_verify": false
+    },
+    {
+      "name": "zakroma_02",
+      "endpoint": "https://zakroma.example.com",
+      "bucket": "bucket_02",
+      "access_key": "REPLACE_OR_USE_ENV",
+      "secret_key": "REPLACE_OR_USE_ENV",
+      "path_style": true,
+      "insecure_skip_verify": false
+    }
+  ],
+  "seed": {
+    "small_pct": 98,
+    "medium_pct": 1.8,
+    "large_pct": 0.2,
+    "small":  { "min_kb": 1,     "max_kb": 100 },
+    "medium": { "min_kb": 100,   "max_kb": 10240 },
+    "large":  { "min_kb": 10240, "max_kb": 512000 }
+  }
+}
