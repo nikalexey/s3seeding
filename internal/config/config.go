@@ -80,7 +80,7 @@ func (c *Config) applyDefaults() {
 
 func (c *Config) applyEnv() {
 	for i := range c.Storages {
-		base := "S3BENCH_" + sanitizeEnv(c.Storages[i].Name)
+		base := "S3SEEDING_" + sanitizeEnv(c.Storages[i].Name)
 		if v, ok := os.LookupEnv(base + "_ACCESS_KEY"); ok {
 			c.Storages[i].AccessKey = v
 		}
@@ -124,7 +124,7 @@ func (c *Config) validate() error {
 		case s.Bucket == "":
 			return fmt.Errorf("config: storage %q has an empty bucket", s.Name)
 		case s.AccessKey == "" || s.SecretKey == "":
-			return fmt.Errorf("config: storage %q has no access/secret key (set it in the config or via S3BENCH_%s_ACCESS_KEY/_SECRET_KEY)", s.Name, sanitizeEnv(s.Name))
+			return fmt.Errorf("config: storage %q has no access/secret key (set it in the config or via S3SEEDING_%s_ACCESS_KEY/_SECRET_KEY)", s.Name, sanitizeEnv(s.Name))
 		}
 		seen[s.Name] = true
 	}

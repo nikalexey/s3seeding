@@ -21,12 +21,12 @@ make seed                            # засеять хранилище (STORAG
 ```
 
 Секреты можно не хранить в конфиге, а передавать через переменные окружения.
-Имя переменной: `S3BENCH_<NAME>_<FIELD>`, где `<NAME>` — имя хранилища в верхнем
+Имя переменной: `S3SEEDING_<NAME>_<FIELD>`, где `<NAME>` — имя хранилища в верхнем
 регистре (не-буквенно-цифровые символы → `_`):
 
 ```bash
-export S3BENCH_ZAKROMA_01_ACCESS_KEY=...
-export S3BENCH_ZAKROMA_01_SECRET_KEY=...
+export S3SEEDING_ZAKROMA_01_ACCESS_KEY=...
+export S3SEEDING_ZAKROMA_01_SECRET_KEY=...
 ```
 
 Поддерживаются `*_ACCESS_KEY`, `*_SECRET_KEY`, `*_ENDPOINT`, `*_BUCKET` —

@@ -16,7 +16,7 @@ func TestLoadDefaultsAndEnvOverride(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	t.Setenv("S3BENCH_S3_OLD_SECRET_KEY", "ENVSECRET")
+	t.Setenv("S3SEEDING_S3_OLD_SECRET_KEY", "ENVSECRET")
 
 	cfg, err := Load(path)
 	if err != nil {
